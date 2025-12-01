@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript Final Project</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+        <h1>Inventory Management System</h1>
+        <h3>Inventory Summary</h3>
+        </header>
+        
+        <form>
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" required>
+
+            <label for="itemQuantity">Item Quantity:</label>
+            <input type="number" id="itemQuantity" name="itemQuantity" required>
+
+            <label for="itemCost">Item Cost:</label>
+            <input type="number" step="0.01" id="itemCost" name="itemCost" required>
+
+            <button type="submit" value="Add Item">Add Item</button>
+        </form>
+
+
+        <ul id="inventorySummary"></ul>
+
+        <ul id="totalQuantity"></ul>
+        <ul id="totalValue"></ul>
+
+
+
+        <script src="script.js"></script>
+    </body>
+
+
+    
+</html>
