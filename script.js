@@ -36,7 +36,7 @@ function addToInventory() {
         let item = inventory[i];
 
         let liItem = document.createElement('li');
-        liItem.textContent = `${item.name} - Quantity: ${item.quantity}, Price: $${item.price.toFixed(2)}`;
+        liItem.textContent = `${item.name} - Quantity: ${item.quantity}, Price: $${item.cost.toFixed(2)}`;
 
         inventorySummary.appendChild(liItem);
     }
@@ -56,7 +56,7 @@ function calculateTotals() {
     // iterate through inventory
     inventory.forEach(function(item) {
         totalQuantity += item.quantity;
-        totalValue += item.quantity * item.price;
+        totalValue += item.quantity * item.cost;
     }
 );
 
