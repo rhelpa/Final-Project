@@ -4,15 +4,19 @@
         <meta charset="UTF-8">
         <title>JavaScript Final Project</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
     <body>
         <header>
         <h1>Inventory Management System</h1>
-        <h3>Inventory Summary</h3>
+        
         </header>
         
         <form>
+            <label for="dateAdded">Date Added:</label>
+            <input type="date" id="dateAdded" name="dateAdded" required>
+
             <label for="itemName">Item Name:</label>
             <input type="text" id="itemName" name="itemName" required>
 
@@ -25,8 +29,8 @@
             <button type="submit" value="Add Item">Add Item</button>
         </form>
         <!-- TODO: Add delete row item button / reset inventory button -->
-
-        <ul id="inventorySummary"></ul>
+        <h3>Inventory Summary</h3>
+        <ul id="inventorySummary"><form id="removeButton"></form></ul>
 
         <ul id="totalQuantity"></ul>
         <ul id="totalValue"></ul>
@@ -41,3 +45,35 @@
 
     
 </html>
+
+<!-- index.html:
+
+    Be a valid HTML5 document as checked by the W3C validator.
+
+    Be named exactly index.html.
+
+    Include at least one form with a minimum of 5 input controls, such as:
+
+        text or email inputs
+
+        radio buttons
+
+        checkboxes
+
+        select lists
+
+        number/range inputs, etc.
+
+    Include at least:
+
+        One header element (such as <header>, <h1> section)
+
+        Three paragraphs of text (can be descriptive, instructions, or story text)
+
+        One footer
+
+    Include at least three images (<img> tags) used meaningfully in the context of the app.
+
+    Include at least one external hyperlink (<a> tag) to another website that is related to your topic.
+
+    Include a favicon / page icon linked in the <head> of your HTML . -->

@@ -15,3 +15,40 @@ h2 {
     color: #555;
     margin-left: 20px;
 }
+
+h3 {
+    color: #666;
+    margin-left: 20px;
+    justify-self: center;
+}
+
+li{
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#totalQuantity, #totalValue {
+    font-weight: bold;
+    margin: 20px;
+    padding: 10px;
+    background-color: #e2e2e2;
+}
+
+/* styles.css:
+
+    Contain all of your project’s CSS; no inline styles or <style> blocks in the HTML (except very small, justified exceptions).
+
+    Target at least:
+
+        One id selector
+
+        Two or more class selectors
+
+    Define default font styles for the page.
+
+    Include at least one CSS animation or transition, applied to an element (such as hover effect, button animation, image fade-in, or a class that is toggled via JavaScript).
+
+    Validate with the W3C CSS validator and fix any major errors. */
