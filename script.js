@@ -38,7 +38,10 @@ function addToInventory() {
         let item = inventory[i];
 
         let liItem = document.createElement('li');
-        liItem.textContent = `${item.date} || ${item.name} - Quantity: ${item.quantity}, Price: $${item.cost.toFixed(2)}`;
+        liItem.textContent = `Date: ${item.date} ||
+        Item: ${item.name} ||
+        Quantity: ${item.quantity} ||
+        Price: $${item.cost.toFixed(2)}  `;
 
         let removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
@@ -46,7 +49,7 @@ function addToInventory() {
             removeItem(i);
         });
 
-        liItem.appendChild(removeButton);   // attach the button to the <li>
+        liItem.appendChild(removeButton);   // attach the remove button to the <li>
         inventorySummary.appendChild(liItem);
 
     }

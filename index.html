@@ -13,24 +13,40 @@
         
         </header>
         
-        <form>
-            <label for="dateAdded">Date Added:</label>
-            <input type="date" id="dateAdded" name="dateAdded" required>
+        <div class ="inventory-form">
+            <img src="stamp.jpg" width="200" height="150">
+            <form>
+                <label for="dateAdded">Date Added:</label>
+                <input type="date" id="dateAdded" name="dateAdded" required>
+                <br>
+                <label for="itemName">Item Name:</label>
+                <select name="itemName" id="itemName" required>
+                    <option value="" disabled selected>Select an item</option>
+                    <option value="Item 111111">Item 111111</option>
+                    <option value="Item 222222">Item 222222</option>
+                    <option value="Item 333333">Item 333333</option>
+                    <option value="Item 444444">Item 444444</option>
+                </select>
+                <br>    
+                <label for="itemQuantity">Item Quantity:</label>
+                <input type="number" id="itemQuantity" name="itemQuantity" required>
+                <br>
+                <label for="itemCost">Item Cost:</label>
+                <input type="number" step="0.01" id="itemCost" name="itemCost" required>
+                <br><br>
+                <button type="submit" value="Add Item">Add item</button>
+            </form>
 
-            <label for="itemName">Item Name:</label>
-            <input type="text" id="itemName" name="itemName" required>
+        <p>Inventory will appear below as items are added. Click Remove to Delete.</p>
+           
+        </div>
 
-            <label for="itemQuantity">Item Quantity:</label>
-            <input type="number" id="itemQuantity" name="itemQuantity" required>
 
-            <label for="itemCost">Item Cost:</label>
-            <input type="number" step="0.01" id="itemCost" name="itemCost" required>
-
-            <button type="submit" value="Add Item">Add Item</button>
-        </form>
-        <!-- TODO: Add delete row item button / reset inventory button -->
         <h3>Inventory Summary</h3>
-        <ul id="inventorySummary"><form id="removeButton"></form></ul>
+
+        <ul id="inventorySummary">
+            <form id="removeButton"></form>
+        </ul>
 
         <ul id="totalQuantity"></ul>
         <ul id="totalValue"></ul>
@@ -43,6 +59,10 @@
     </body>
 
 
+    <footer>
+        <p>CR 2025 Rick Helpa</p>
+        <p><a href="https://github.com/rhelpa">GitHub</a></p>
+    </footer>
     
 </html>
 
