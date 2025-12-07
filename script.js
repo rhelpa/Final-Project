@@ -13,6 +13,11 @@ form.addEventListener('submit', function(event) {
     let itemQuantity = document.querySelector('#itemQuantity').value;
     let itemCost = document.querySelector('#itemCost').value;
 
+    if (!dateAdded || !itemName || !itemQuantity || !itemCost) {
+    alert("Please complete all fields before adding an item.");
+    return;
+    }
+
     // define inventory item dictionary object
     let inventoryItem = {
         date: dateAdded,
@@ -49,13 +54,14 @@ form.addEventListener('submit', function(event) {
     // reset form fields
     form.reset();
 
+    // render most current inventory & totals
     renderInventory();
     }
 );
 
 
 function addToInventory() {
-    // access DOM inventory summary
+    // initialize/clear inventory summary section
     let inventorySummary = document.querySelector('#inventorySummary');
     inventorySummary.innerHTML = '';
 
@@ -70,14 +76,15 @@ function addToInventory() {
         Price: $${item.cost.toFixed(2)}
          `;
 
+         // create x_mark image & remove button for each item, along with event listener to remove item on click
         let x_mark = document.createElement('img');
         x_mark.src = 'x_mark.png';
         x_mark.alt = 'Remove item';
+        x_mark.classList.add('hover-x'); // class for hover effect
         x_mark.style.width = '20px';
         x_mark.style.height = '20px';
         x_mark.style.display = 'inline-block';
         x_mark.style.marginLeft = '10px';
-
         x_mark.addEventListener('click', function () {
             removeItem(i);
         });
@@ -90,7 +97,8 @@ function addToInventory() {
 
         liItem.appendChild(removeButton);   // attach the remove button to the <li>
         liItem.appendChild(x_mark);        // attach the x_mark image to the <li>
-        inventorySummary.appendChild(liItem);
+        
+        inventorySummary.appendChild(liItem); // attach the <li> to the inventory summary
 
     }
 }
