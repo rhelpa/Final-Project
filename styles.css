@@ -5,36 +5,37 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #aed0fc;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #1900ff;
     margin-top: 20px;
 }
 
 h2 {
-    color: #555;
+    color: #0020af;
     margin-left: 20px;
 }
 
 h3 {
-    color: #666;
+    color: #1b013d;
     margin-left: 20px;
     justify-self: center;
 }
 
 p {
-    margin-left: 20px;
+    display: block;
+    margin-left: 80px;
     color: #444;
 }
 
 li{
     margin: 10px 0;
     padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #d4eeff;
+    border: 1px solid #888888;
     border-radius: 5px;
 }
 
@@ -48,6 +49,17 @@ footer {
     bottom: 0;
 }
 
+.add-button {
+    display: block;
+    margin: 0 auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
 
 .inventory-form {
     display: flex;
@@ -61,14 +73,10 @@ footer {
 }
 
 .inventory-form form {
-    display: flexbox;
-    flex-direction: column;
     width: 300px;
 }
 
 .inventory-form img {
-    display: flexbox;
-    align-content: center;
     padding: 20px;
     margin: 20px;
     border-radius: 5px;
@@ -79,19 +87,29 @@ footer {
     color: #333;
 }
 
+#inventorySummary {
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+}
+
 #inventorySummary li {
-    display: flexbox;
     flex-direction: row;
     list-style-type: none;
     padding: 0;
+    align-self: center;
 }
-
 
 #totalQuantity, #totalValue {
     font-weight: bold;
-    margin: 20px;
+    margin: 10px 20%;
     padding: 10px;
     background-color: #e2e2e2;
+    max-width: 60%;
 }
 
 /* styles.css:

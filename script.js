@@ -23,6 +23,32 @@ form.addEventListener('submit', function(event) {
 
     // append new item to inventory array
     inventory.push(inventoryItem);
+
+    let success_message = document.createElement('span');
+    success_message.style.display = 'inline-block';
+    success_message.style.marginLeft = '40%';
+    success_message.textContent = ' Item added!';
+    success_message.style.color = 'green';
+    success_message.style.fontWeight = 'bold';
+
+    // shows green check image briefly when item is added before using timeout to remove it
+    let green_check = document.createElement('img');
+    green_check.src = 'green_check.png';
+    green_check.alt = 'Item added';
+    green_check.style.width = '20px';
+    green_check.style.height = '20px';
+    green_check.style.display = 'inline-block';
+    green_check.style.marginLeft = '40%';
+    form.appendChild(green_check);
+    form.appendChild(success_message);
+    setTimeout(function() {
+        form.removeChild(green_check);
+        form.removeChild(success_message);
+    }, 2000);
+
+    // reset form fields
+    form.reset();
+
     renderInventory();
     }
 );
@@ -41,7 +67,20 @@ function addToInventory() {
         liItem.textContent = `Date: ${item.date} ||
         Item: ${item.name} ||
         Quantity: ${item.quantity} ||
-        Price: $${item.cost.toFixed(2)}  `;
+        Price: $${item.cost.toFixed(2)}
+         `;
+
+        let x_mark = document.createElement('img');
+        x_mark.src = 'x_mark.png';
+        x_mark.alt = 'Remove item';
+        x_mark.style.width = '20px';
+        x_mark.style.height = '20px';
+        x_mark.style.display = 'inline-block';
+        x_mark.style.marginLeft = '10px';
+
+        x_mark.addEventListener('click', function () {
+            removeItem(i);
+        });
 
         let removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
@@ -50,6 +89,7 @@ function addToInventory() {
         });
 
         liItem.appendChild(removeButton);   // attach the remove button to the <li>
+        liItem.appendChild(x_mark);        // attach the x_mark image to the <li>
         inventorySummary.appendChild(liItem);
 
     }
@@ -84,55 +124,4 @@ function renderInventory() {
     calculateTotals();
 }
 
-
-// script.js:
-
-//     JavaScript Events
-
-//         Use at least three event-driven interactions (click, change, input, mouseover), wired to DOM elements.
-
-//     Array Usage
-
-//         Use at least one array to store data that is meaningfully used in the program (list of products, options, pages of text, restaurants).
-
-//         The array can be static or partially populated from user input.
-
-//     Form-Based Interaction
-
-//         Include at least one HTML form that captures user data (text input, select, radio buttons, checkboxes, range sliders).
-
-//         Form submissions or input changes must trigger behavior in your JavaScript (validation, filtering, calculation, or personalization).
-
-//     Image Interactivity
-
-//         At least one image must be changed or altered based on user interaction. Examples: swap image source, change size, apply a CSS class that animates/filters the image, hide/show an image.
-
-//     Loop
-
-//         Use at least one loop (for, while, for…of, etc.) to process or display data (for example, building a list from an array).
-
-//     Conditional Logic
-
-//         Use at least one conditional (if, else if, switch, etc.) that changes program behavior depending on user input or state.
-
-//     DOM Manipulation – Create Content
-
-//         Use JavaScript DOM methods to create new elements or text nodes and insert them into the page (dynamically build a list, cards, messages).
-
-//     DOM Manipulation – Styling/Classes
-
-//         Use JavaScript to change the appearance or layout of elements by adding/removing/changing CSS classes or styles (show/hide sections, highlight active choices).
-
-//     Functions
-
-//         Write at least three named functions (not counting anonymous arrow functions directly assigned as event listeners or timers).
-
-//         These functions should encapsulate meaningful tasks ( example: calculateTotal(), renderResults(), loadPage(pageIndex)).
-
-//     Code Quality
-
-//         Use meaningful variable and function names.
-
-//         Include clear comments explaining non-obvious logic.
-
-//         Remove all debugging statements like console.log before submission.
+renderInventory();
