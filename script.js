@@ -40,10 +40,10 @@ form.addEventListener('submit', function(event) {
     let green_check = document.createElement('img');
     green_check.src = 'green_check.png';
     green_check.alt = 'Item added';
-    green_check.style.width = '20px';
-    green_check.style.height = '20px';
+    green_check.style.width = '100px';
+    green_check.style.height = '100px';
     green_check.style.display = 'inline-block';
-    green_check.style.marginLeft = '40%';
+    green_check.style.marginLeft = '35%';
     form.appendChild(green_check);
     form.appendChild(success_message);
     setTimeout(function() {
